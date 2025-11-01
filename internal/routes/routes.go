@@ -25,4 +25,10 @@ func SetupRoutes(app *fiber.App, cfg *config.Config) {
 			"timestamp": c.Context().Time(),
 		})
 	})
+
+	app.Get("/hello", func(c *fiber.Ctx) error {
+		return c.JSON(fiber.Map{
+			"message": "Hello World",
+		})
+	})
 }
