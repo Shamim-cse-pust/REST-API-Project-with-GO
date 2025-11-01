@@ -18,21 +18,21 @@ A production-ready REST API built with Go, Fiber, GORM, and MySQL. Demonstrates 
 
 ### User Management
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/api/v1/users` | Get all users |
-| `GET` | `/api/v1/users/:id` | Get user by ID |
-| `POST` | `/api/v1/users` | Create new user |
-| `PUT` | `/api/v1/users/:id` | Update user |
-| `DELETE` | `/api/v1/users/:id` | Delete user |
+| Method   | Endpoint            | Description     |
+| -------- | ------------------- | --------------- |
+| `GET`    | `/api/v1/users`     | Get all users   |
+| `GET`    | `/api/v1/users/:id` | Get user by ID  |
+| `POST`   | `/api/v1/users`     | Create new user |
+| `PUT`    | `/api/v1/users/:id` | Update user     |
+| `DELETE` | `/api/v1/users/:id` | Delete user     |
 
 ### System Endpoints
 
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/` | Welcome message |
-| `GET` | `/health` | Health check |
-| `GET` | `/hello` | Hello world |
+| Method | Endpoint  | Description     |
+| ------ | --------- | --------------- |
+| `GET`  | `/`       | Welcome message |
+| `GET`  | `/health` | Health check    |
+| `GET`  | `/hello`  | Hello world     |
 
 ## 🛠️ Technology Stack
 
@@ -79,7 +79,7 @@ REST-API-Project-with-GO/
 **Clean Architecture** with clear layer separation:
 
 - **Handler Layer**: HTTP request/response handling
-- **Service Layer**: Business logic and validation  
+- **Service Layer**: Business logic and validation
 - **Repository Layer**: Data access abstraction
 - **Model Layer**: Domain entities and DTOs
 
@@ -88,6 +88,7 @@ Handler → Service → Repository → Database
 ```
 
 **Key Design Decisions:**
+
 - Factory pattern for dependency injection
 - Interface-based abstractions for testability
 - Separation of concerns for maintainability
@@ -230,9 +231,10 @@ curl -X DELETE http://localhost:8082/api/v1/users/1
 ## 👨‍💻 Author
 
 **Md. Shamim Miah**  
-*Software Engineer II | Brain Station 23 PLC*
+_Software Engineer II | Brain Station 23 PLC_
 
 ### 📫 Connect With Me
+
 - **Email**: [shamim.pust.cse@gmail.com](mailto:shamim.pust.cse@gmail.com)
 - **Phone**: +8801784766676
 - **GitHub**: [@Shamim-cse-pust](https://github.com/Shamim-cse-pust)
@@ -241,8 +243,8 @@ curl -X DELETE http://localhost:8082/api/v1/users/1
 - **Resume**: [Download PDF](https://shamim-cse-pust.github.io/myself-shamim/resume.pdf)
 
 ### 🚀 About Me
-Driven by curiosity and a passion for growth, I thrive on solving complex problems and embracing new challenges. My goal is to craft impactful software solutions, collaborate with talented professionals, and continuously evolve—contributing to both organizational success and my own journey of learning and creativity.
 
+Driven by curiosity and a passion for growth, I thrive on solving complex problems and embracing new challenges. My goal is to craft impactful software solutions, collaborate with talented professionals, and continuously evolve—contributing to both organizational success and my own journey of learning and creativity.
 
 ⭐ **Star this repository if you found it helpful!**
 
