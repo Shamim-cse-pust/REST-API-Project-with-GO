@@ -1,11 +1,13 @@
 package main
 
 import (
+	"context"
 	"io"
 	"log"
 	"os"
 	"os/signal"
 	"syscall"
+	"time"
 
 	"github.com/Shamim-cse-pust/REST-API-Project-with-GO/internal/config"
 	"github.com/Shamim-cse-pust/REST-API-Project-with-GO/internal/routes"
@@ -68,9 +70,14 @@ func main() {
 	// Block until we receive a signal
 	<-c
 
-	// Graceful shutdown
+	// Graceful shutdown with context
 	log.Println("🛑 Shutting down gracefully...")
-	if err := app.Shutdown(); err != nil {
+
+	// Give active requests 10 seconds to finish
+	ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+	defer cancel()
+
+	if err := app.ShutdownWithContext(ctx); err != nil {
 		log.Printf("❌ Server shutdown error: %v", err)
 	}
 	log.Println("✅ Server stopped")
