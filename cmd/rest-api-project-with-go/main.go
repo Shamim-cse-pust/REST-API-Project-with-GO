@@ -10,6 +10,7 @@ import (
 	"time"
 
 	"github.com/Shamim-cse-pust/REST-API-Project-with-GO/internal/config"
+	"github.com/Shamim-cse-pust/REST-API-Project-with-GO/internal/database"
 	"github.com/Shamim-cse-pust/REST-API-Project-with-GO/internal/routes"
 	"github.com/gofiber/fiber/v2"
 )
@@ -46,6 +47,15 @@ func main() {
 	if err != nil {
 		log.Fatalf("❌ Failed to load configuration: %v", err)
 	}
+
+	// Connect to database with GORM
+	err = database.ConnectDatabase(cfg)
+	if err != nil {
+		log.Fatalf("❌ Failed to connect to database: %v", err)
+	}
+	defer database.CloseDatabase()
+
+	// Note: Using manual migrations with 'make migrate' instead of auto-migration
 
 	// Create Fiber app
 	app := fiber.New(fiber.Config{
